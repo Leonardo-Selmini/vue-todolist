@@ -2,13 +2,7 @@ const app = new Vue({
   el: '#root',
   data: {
     inputText: '',
-    list: [
-      {
-        text: 'fare la spesa',
-        notDone: false
-      },
-    ]
-
+    list: []
   },
   methods: {
     removeLi: function (index) {
@@ -18,7 +12,7 @@ const app = new Vue({
       if (this.inputText != '') {
         const newLi = {
           text: this.inputText,
-          notDone: false
+          notDone: true
         }
         this.list.push(newLi);
         this.inputText = '';

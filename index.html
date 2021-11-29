@@ -32,7 +32,7 @@
       <div id="list-container">
         <ul>
           <li v-for="(li, index) in list">
-            <span :class=" notDone ? '' : 'deleted' ">{{li.text}}</span>
+            <span :class=" li.notDone ? '' : 'deleted' ">{{li.text}}</span>
             <i class="fas fa-times-circle" @click="removeLi(index)"></i>
           </li>
           <li v-if="list.length == 0">
