@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>ToDoList</title>
+  <!-- CDN font awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
+  <!-- collegamento css -->
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div id="root">
+    <!-- 00000000 HEADER 00000000 -->
+    <header>
+      <img src="https://www.boolean.careers/images/misc/logo.png" alt="Boolean Careers Logo">
+    </header>
+
+    <!-- 00000000 MAIN 00000000 -->
+    <main>
+      <h1>ToDoList</h1>
+      <div id="input-container">
+        <input id="input-text" type="text" placeholder="Inserisci Testo">
+        <button class="btn">Add</button>
+      </div>
+      <div id="list-container">
+        <ul>
+          <li>
+            <span>fare la spesa</span>
+            <i class="fas fa-times-circle"></i>
+          </li>
+          <li>
+            <span>sistemare la spesa</span>
+            <i class="fas fa-check-circle"></i>
+          </li>
+        </ul>
+      </div>
+    </main>
+  </div>
+
+
+
+
+
+
+
+<!-- VUE development version, includes helpful console warnings -->
+<script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+<!-- my scrypt -->
+<script src="main.js"></script>
+</body>
+</html>
