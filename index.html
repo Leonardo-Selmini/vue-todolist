@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,7 +8,9 @@
 
   <title>ToDoList</title>
   <!-- CDN font awesome -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
   <!-- collegamento css -->
   <link rel="stylesheet" href="style.css">
 </head>
@@ -23,18 +26,17 @@
     <main>
       <h1>ToDoList</h1>
       <div id="input-container">
-        <input id="input-text" type="text" placeholder="Inserisci Testo">
-        <button class="btn">Add</button>
+        <input id="input-text" type="text" placeholder="Inserisci Testo" v-model="inputText">
+        <button class="btn" @click="addLi">Add</button>
       </div>
       <div id="list-container">
         <ul>
-          <li>
-            <span>fare la spesa</span>
-            <i class="fas fa-times-circle"></i>
+          <li v-for="(li, index) in list">
+            <span :class=" notDone ? '' : 'deleted' ">{{li.text}}</span>
+            <i class="fas fa-times-circle" @click="removeLi(index)"></i>
           </li>
-          <li>
-            <span>sistemare la spesa</span>
-            <i class="fas fa-check-circle"></i>
+          <li v-if="list.length == 0">
+            <span>Inserisci una commissione</span>
           </li>
         </ul>
       </div>
@@ -47,9 +49,10 @@
 
 
 
-<!-- VUE development version, includes helpful console warnings -->
-<script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
-<!-- my scrypt -->
-<script src="main.js"></script>
+  <!-- VUE development version, includes helpful console warnings -->
+  <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+  <!-- my scrypt -->
+  <script src="main.js"></script>
 </body>
+
 </html>

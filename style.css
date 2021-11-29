@@ -69,3 +69,8 @@ h1 {
 #list-container li:last-child {
   border-bottom: none;
 }
+
+#list-container li span.deleted {
+  text-decoration: line-through;
+}
+
