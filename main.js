@@ -2,7 +2,20 @@ const app = new Vue({
   el: '#root',
   data: {
     inputText: '',
-    list: []
+    list: [
+      {
+        text: 'Fare la spesa',
+        notDone: true,
+      },
+      {
+        text: 'Portare fuori il cane',
+        notDone: false,
+      },
+      {
+        text: 'Cucinare il pranzo',
+        notDone: false,
+      }
+    ]
   },
   methods: {
     removeLi: function (index) {
@@ -18,6 +31,13 @@ const app = new Vue({
         this.inputText = '';
       } else {
         alert('Non hai inserito una commissione')
+      }
+    },
+    doneOrNot: function(index) {
+      if (this.list[index].notDone == true) {
+        this.list[index].notDone = false;
+      } else {
+        this.list[index].notDone = true;
       }
     }
   },
